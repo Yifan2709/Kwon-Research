@@ -1,0 +1,49 @@
+{
+  "atom": {
+    "isotope": "87Rb",
+    "initial_ground_state": {"F": 2, "mF": -2},
+    "initial_temperature_uK": 10.0
+  },
+  "trap": {
+    "wavelength_nm": 840.0,
+    "waist_um": 1.1,
+    "depth_over_kB_during_state_readout_mK": 7.0
+  },
+  "quantization_field": {
+    "control_axis": "量子化轴磁场控制电压",
+    "control_voltage_unit": "V",
+    "calibration_point": {"voltage_V": 2.6, "field_G_approx": 3.77},
+    "slope_G_per_V": null,
+    "zero_field_voltage_V": null
+  },
+  "probe": {
+    "transition": {
+      "ground": {"F": 2, "mF": -2},
+      "excited": {"F_prime": 3, "mF_prime": -3},
+      "polarization": "sigma_minus"
+    },
+    "detuning_from_cycling_transition_MHz": [-2.0, -1.0],
+    "detuning_convention": "laser_frequency_minus_transition_frequency",
+    "beam_count": 2,
+    "counterpropagating": true,
+    "collimated": true,
+    "polarization_of_each_beam": "sigma_minus",
+    "power_per_beam_uW": 54.0,
+    "diameter_1_over_e2_mm": 1.5,
+    "reported_intensity_per_beam_mW_per_cm2": 3.06,
+    "reported_s0_per_beam": 1.84,
+    "reported_s0_two_beams_approx": 3.7,
+    "absolute_frequency_difference_kHz": 3.0
+  },
+  "timing": {
+    "strobe_frequency_MHz": 1.416,
+    "probe_on_fraction_range": [0.12, 0.14],
+    "trap_on_fraction": 0.73,
+    "trap_off_fraction": 0.27
+  },
+  "fluorescence_collection": {
+    "actual_efficiency_fraction": 0.005,
+    "theoretical_efficiency_fraction": 0.015
+  },
+  "observation": "新实验中未见旧实验那样强的周期性振荡。"
+}
