@@ -1,0 +1,71 @@
+{
+  "atom": {
+    "initial_ground_state": {
+      "F": 2,
+      "mF": -2
+    },
+    "initial_temperature_uK": 10.0
+  },
+  "trap": {
+    "wavelength_nm": 840.0,
+    "waist_um": 1.1,
+    "depth_over_kB_during_state_readout_mK": 7.0,
+    "fictitious_field_vector_G": null
+  },
+  "quantization_field": {
+    "calibration_point": {
+      "voltage_V": 2.6,
+      "field_G_approx": 3.77
+    },
+    "slope_G_per_V": null,
+    "single_pulse_voltage_V": null
+  },
+  "probe": {
+    "polarization": "sigma_minus",
+    "opposite_polarization_fraction": 0.0,
+    "pi_polarization_fraction": 0.0,
+    "detuning_from_cycling_transition_MHz": null,
+    "reported_detuning_range_MHz": [
+      -2.0,
+      -1.0
+    ],
+    "detuning_reference_field_G": null,
+    "beam_count": 2,
+    "counterpropagating": true,
+    "collimated": true,
+    "power_per_beam_uW": 54.0,
+    "diameter_1_over_e2_mm": 1.5,
+    "reported_intensity_per_beam_mW_per_cm2": 3.06,
+    "reported_s0_per_beam": 1.84,
+    "absolute_frequency_difference_kHz": 3.0,
+    "scan_beam_model": "effective_uniform",
+    "pulse_beam_model": "equal_beams_uniform_phase"
+  },
+  "timing": {
+    "strobe_frequency_MHz": 1.416,
+    "probe_on_fraction": null,
+    "reported_probe_on_fraction_range": [
+      0.12,
+      0.14
+    ],
+    "trap_on_fraction": 0.73,
+    "probe_start_fraction": null,
+    "readout_cycles": null
+  },
+  "fluorescence_collection": {
+    "actual_efficiency_fraction": 0.005,
+    "theoretical_efficiency_fraction": 0.015
+  },
+  "scan": {
+    "start_voltage_V": null,
+    "stop_voltage_V": null,
+    "step_voltage_V": null
+  },
+  "model_assumptions": {
+    "probe_polarization": "Ideal stated circular polarization until measured impurity fractions are supplied.",
+    "coherent_scan": "Effective uniform intensity, with total saturation from all beams; optical beat is resolved only by the single-pulse coherent two-beam calculation.",
+    "trap": "Ground-manifold vector field is supplied explicitly; excited-state trap light shifts and atomic motion are not included.",
+    "depumping": "Line-specific steady-state rates and complete ground Zeeman dephasing at each period."
+  },
+  "observation": "新实验中未见旧实验那样强的周期性振荡。"
+}

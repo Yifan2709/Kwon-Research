@@ -1,0 +1,58 @@
+{
+  "description": "Synthetic test inputs only. Values complete missing experimental inputs for short numerical regression checks and are not apparatus measurements.",
+  "parameters": {
+    "experiment": {
+      "trap": {"fictitious_field_vector_G": [0.004, 0.001, -0.002]},
+      "quantization_field": {"slope_G_per_V": 1.23, "single_pulse_voltage_V": 2.55},
+      "probe": {
+        "detuning_from_cycling_transition_MHz": -1.4,
+        "detuning_reference_field_G": 4.1
+      },
+      "timing": {
+        "probe_on_fraction": 0.13,
+        "probe_start_fraction": 0.8,
+        "readout_cycles": 2
+      },
+      "scan": {
+        "start_voltage_V": 2.5,
+        "stop_voltage_V": 2.7,
+        "step_voltage_V": 0.1
+      }
+    },
+    "numerics": {
+      "integration": {"sample_count": 7, "phase_sample_count": 2},
+      "phenomenological": {
+        "memory_amplitude": 0.3,
+        "period_multiplier": 1.2,
+        "base_temperature_mK": 0.2,
+        "extra_temperature_mK": 0.8,
+        "activation_voltage_V": 2.55,
+        "activation_width_V": 0.2,
+        "right_edge_temperature_mK": 0.6,
+        "right_edge_voltage_V": 2.65,
+        "right_edge_width_V": 0.15,
+        "drift_period_s": 2,
+        "drift_phase_rad": 0.4,
+        "scan_speed_V_per_s": 0.3,
+        "scan_speed_multiplier": 1.1,
+        "time_profile_power": 2
+      }
+    }
+  },
+  "mutations": {
+    "strobe_frequency_MHz": 1.7,
+    "reported_s0_per_beam": 0.92,
+    "weak_s0_per_beam": 1e-12,
+    "initial_mF": 0,
+    "linewidth_MHz": 6.2,
+    "mu_B_over_h_MHz_per_G": 1.51,
+    "slope_G_per_V": 1.1,
+    "readout_cycles": 3,
+    "single_pulse_voltage_V": 2.65,
+    "overlapping_probe_start_fraction": 0.5,
+    "negative_step_voltage_V": -0.1,
+    "negative_trap_depth_mK": -0.2,
+    "invalid_initial_mF": 7,
+    "inconsistent_polarization_fraction": 0.8
+  }
+}

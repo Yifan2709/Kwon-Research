@@ -1,0 +1,22 @@
+{
+  "isotope": "87Rb",
+  "nuclear_spin": 1.5,
+  "ground_J": 0.5,
+  "excited_J": 1.5,
+  "ground_lande_g": 0.5,
+  "excited_lande_g": 0.6666666666666666,
+  "mu_B_over_h_MHz_per_G": 1.3996246,
+  "linewidth_MHz": 6.065,
+  "D2_wavelength_nm": 780.241209686,
+  "mass_kg": 1.4431606e-25,
+  "planck_J_s": 6.62607015e-34,
+  "boltzmann_J_per_K": 1.380649e-23,
+  "excited_hyperfine_offsets_MHz": {
+    "1": -423.597,
+    "2": -266.65,
+    "3": 0.0
+  },
+  "sources": [
+    "https://steck.us/alkalidata/rubidium87numbers.pdf"
+  ]
+}

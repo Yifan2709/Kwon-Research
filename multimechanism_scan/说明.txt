@@ -1,23 +1,12 @@
-Kwon Search 当前实验参数
+本目录只保留共享模型的兼容入口，参数只读自根目录 config/ 下的 atomic.json、experiment.json、numerics.json。详细说明见根目录 README.md。
 
-当前实验参数以包内 experiment_parameters.json 为准。它记录原子初态、读出阱、量子化轴控制电压、探测光、频闪时序和收集效率。新实验中未见旧实验那样强的周期性振荡。
+coherence.py 和 coherence_scan.py 与 internal_dynamics 共用 kwon 中的同一份实现。
+check_kwon.py 使用统一电压扫描，不再内置旧数据的极大/极小值位置。
+scan.py 中可选现象学模型的参数全部需要明确填写，不再带入旧拟合常数。
 
-电压与磁场保留 2.6 V ≈ 3.77 G 这一个标定点，换算斜率及零场电压留空。红失谐 1–2 MHz 按“激光频率减跃迁频率”存为 [−2, −1] MHz。12–14% 为探测光开启占空比，73% 和 27% 分别为阱开与阱关占空比。
+本目录既有 CSV/PNG 是历史归档结果，没有按当前配置重算，也不会被新计算入口自动读取。
 
-Python 可通过 voltage_axis.EXPERIMENT 读取当前设置。下列脚本、旧标定假设和已有 CSV、PNG 均属于历史算例。
-
-历史算例 · 多机制扫描
-
-扫描量为量子化轴磁场控制电压，记为 U，单位 V。实验控制标签原文为 scan volt front back SR detection trap 0.12+0.39us2 / 1.00。图中黑点代表口述的近似峰谷，本包没有逐发数据。各条曲线是机制假设下的计算结果。
-
-运行 python scan.py 生成逐电压结果 scenarios.csv 和图 scenarios.png。运行 OPENBLAS_NUM_THREADS=1 python check_kwon.py 生成 12 态控制组 kwon_control.csv。依赖 NumPy、SciPy、Matplotlib。
-
-两个输出表的 scan_voltage_V 均为控制电压。旧列 x 是同一电压的兼容列。scenarios.csv 的 b_assumed_G 和 kwon_control.csv 的 b_G 均为模型中的带符号纵向磁场。转换关系为 b = k(U − U₀)。本组示例取 k = +1 G/V、U₀ = +0.65 V，偏置用于对齐中间谷。这两个数值仍缺少独立实验标定。取得标定后在 voltage_axis.py 中更新 SCENARIO_SLOPE_G_PER_V 与 SCENARIO_ZERO_V，再运行两个脚本。单独运行 coherence_scan.py 时保留其原有的另一组假设 k = +2.38163 G/V、U₀ = 0 V，对应文件中 COHERENCE 开头的两个参数。该脚本的 published_working_point 是论文 20 G 的对照点，电压留空。
-
-recoil 用单条循环线与球形动量吸收边界。spin_response 是许多相同短横向扰动的复振幅之和的归一化模方，r = 0.55 是每周期横向幅度记忆系数。该近似没有脉冲宽度的谐波抑制，没有从阱光偏振预言绝对扰动强度。
-
-combined 用 S=P(3,U_trap/kT)，即三维经典谐振子热能量低于阱深的概率，U_trap 表示阱深。模型用截断前热分布的末态估算留存，未计算首达过程、运动轨迹、再捕获或相机判别。用最低响应作基线，额外热量比例从 0 到 3.3 个阱深。这是假定的强放大。若 U_trap/kB = 5.6 mK，最大额外有效温度为 18.5 mK。两个 sigmoid 分别让周期性加热在 U > −4.25 V 附近显现、右端 U > 3.58 V 时新增背景热量。两处电压均根据口述观测外形选择。spin_only_survival 去掉两个包络。时间混叠列以 15.2 秒的技术扰动和 0.1 或 0.2 V/s 的顺序电压扫描举例，相位选择用于示形。
-
-kwon_control 中 prob_emitted_at_least_one_pi_or_sigma_minus 表示纯 σ⁺ 驱动下，F=2→F′=3 一帧内至少一次发射非循环偏振光子的概率，与逃逸率是不同的观测量。控制组计算使用 0.8 μs 周期、3 mG 虚场、6 ms 读出，光相对零场红失谐 2 MHz。
-
-来源包括 Kwon et al. https://arxiv.org/abs/1706.09497 和同步泵浦实验 https://doi.org/10.1103/PhysRevA.102.033102 （原子蒸气实验）。
+示例（从代码包根目录执行）：
+python -m kwon.parameters --check
+python multimechanism_scan/check_kwon.py --csv outputs/kwon_control.csv
+python multimechanism_scan/scan.py --output-dir outputs

@@ -1,0 +1,48 @@
+{
+  "integration": {
+    "method": "DOP853",
+    "rtol": 1e-09,
+    "atol": 1e-12,
+    "sample_count": 25,
+    "phase_sample_count": 16
+  },
+  "validation": {
+    "probability_atol": 1e-08,
+    "matrix_atol": 1e-11,
+    "parameter_rtol": 1e-09
+  },
+  "scan": {
+    "count_noncycling_events": true
+  },
+  "recoil": {
+    "series_terms": 160
+  },
+  "plot": {
+    "figure_size_inches": [
+      10,
+      6
+    ],
+    "dpi": 180,
+    "font_family": [
+      "Noto Sans CJK SC",
+      "DejaVu Sans"
+    ],
+    "font_size": 11
+  },
+  "phenomenological": {
+    "memory_amplitude": null,
+    "period_multiplier": null,
+    "base_temperature_mK": null,
+    "extra_temperature_mK": null,
+    "activation_voltage_V": null,
+    "activation_width_V": null,
+    "right_edge_temperature_mK": null,
+    "right_edge_voltage_V": null,
+    "right_edge_width_V": null,
+    "drift_period_s": null,
+    "drift_phase_rad": null,
+    "scan_speed_V_per_s": null,
+    "scan_speed_multiplier": null,
+    "time_profile_power": null
+  }
+}
